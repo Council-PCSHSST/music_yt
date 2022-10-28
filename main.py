@@ -1,11 +1,15 @@
 import os
 try:
     from pytube import YouTube
+    import pygame
+    import time
 except ModuleNotFoundError:
     os.system("python -m pip install pytube")
     print("PyTube installed on your device!")
-    from pytube import YouTube
-    print("Let's countinue!!! ;)")
+    os.system("python -m pip install pygame")
+    print("Pygame installed on your device!")
+    print("Run this script again! ;)")
+    exit()
 
 def runDownloader(yt):
     print(yt.title,"is downloading! ⏳")
@@ -16,6 +20,9 @@ def runDownloader(yt):
     os.rename(out_file, new_file)
     print(yt.title + " has been successfully download! ✅\n---------------")
 
+pygame.init()
+os.system('cls' if os.name=='nt' else 'clear')
+complete_sound = pygame.mixer.Sound("complete.mp3")
 # Read files only!
 try:
     music_note = open("list.txt","r")
@@ -29,3 +36,9 @@ for fNotes in music_note.readlines():
 
 for noFiles in file_note:
     runDownloader(YouTube(noFiles))
+os.system('cls' if os.name=='nt' else 'clear')
+complete_sound.play()
+print("=================== [✅] ===================")
+print("Download successfully!")
+print("=================== [✅] ===================")
+time.sleep(2)
