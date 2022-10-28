@@ -10,6 +10,7 @@
 - Visual Code Studio **(VSCode)**
 - Google Colab **(ใช้ทดสอบการรันจริง)**
 - PyTube Module **(from pyPi.org)**
+- PyGame **(from PyPi.org)**
 
 ## สิ่งที่มีแผนจะพัฒนาเพิ่ม
 - รองรับการดาวน์โหลดในรูปแบบ Playlist
